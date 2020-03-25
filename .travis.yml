@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - '12'
+
+services:
+  - docker
+
+install:
+  - npm ci
+
+script:
+  - npm run test
+
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master
